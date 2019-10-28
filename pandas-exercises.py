@@ -18,7 +18,7 @@ print('---this is the output from info()----')
 print(insurance.info())
 
 print('---this is the output from describe()----')
-print(insurance.dtypes)
+print(insurance.describe())
 
 print('---this is the output by selecting Age----')
 print(insurance['age'])
@@ -28,6 +28,8 @@ print(insurance[['age', 'children', 'charges']])
 
 print('---this is the output by selecting first 5 rows of Age, Children, Charges----')
 print(insurance.loc[[0,1,2,3,4], ['age', 'children', 'charges']])
+print('-------- another solution -----------')
+print(insurance[['age', 'children', 'charges']].head(5))
 
 print('---this is the output by selecting min of Charges----')
 print(insurance['charges'].min())
@@ -52,6 +54,8 @@ print(insurance['region'].value_counts())
 
 print('---this is the output of how many insured are Children----')
 print(insurance['children'].sum())
+print('---real solution is - this is the output of how many insured are Children----')
+print(insurance[insurance['age'] < 18])
 
 print('---this is the output of how many insured by region ----')
 # I though younger paid more, Family with kids paid less, but looks like Im wrong.
