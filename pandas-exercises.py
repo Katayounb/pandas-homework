@@ -5,7 +5,7 @@ insurance = pd.read_csv('data/insurance.csv')
 print(insurance)
 
 print(insurance.columns)
-print('---this is the output from to_string----')
+print('---this is the output from to_string - print the whole data set----')
 print(insurance.to_string())
 
 print('---this is the output from dtype----')
@@ -23,7 +23,7 @@ print(insurance.describe())
 print('---this is the output by selecting Age----')
 print(insurance['age'])
 
-print('---this is the output by selecting Age, Children, Charges----')
+print('---this is the output by selecting Age, Children, Charges - used [[ ]] because passing a list ----')
 print(insurance[['age', 'children', 'charges']])
 
 print('---this is the output by selecting first 5 rows of Age, Children, Charges----')
@@ -57,6 +57,7 @@ print(insurance['children'].sum())
 print('---real solution is - this is the output of how many insured are Children----')
 print(insurance[insurance['age'] < 18])
 
-print('---this is the output of how many insured by region ----')
+print('---this is the output of how many insured by region - to_string helps to show all the data not ... ----')
 # I though younger paid more, Family with kids paid less, but looks like Im wrong.
+# age  and charges are correlated
 print(insurance.corr().to_string())
